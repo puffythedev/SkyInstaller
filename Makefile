@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -I./src/include -L./src/lib -lraylib -lopengl32 -lwinmm -mwindows
+	g++ main.cpp -o out/SkyInstaller.exe -I./src/include -L./src/lib -lraylib -lopengl32 -lwinmm -mwindows
