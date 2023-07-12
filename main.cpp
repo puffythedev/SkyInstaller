@@ -1,6 +1,5 @@
 // raylib and discord rpc
 #include <raylib.h>
-#include <a.h>
 
 // Screen System
 typedef enum Screen { MAIN } Screen;
@@ -9,16 +8,17 @@ typedef enum Screen { MAIN } Screen;
 Screen current = MAIN;
 
 // dimensions
-const int width = 400;
-const int height = 600;
+const int width = 600;
+const int height = 400;
+const char* welc = "Welcome To SkyInstaller!";
+
+// rectangles
+Rectangle Start = { width / 2 - 90, height / 2, 180, 50};
 
 // main func
 int main(){
     // Window Initialization
     InitWindow(width, height, "SkyInstaller");
-    // Window Opacity
-    SetWindowOpacity(0.5f);
-    init();
     while(!WindowShouldClose()){
         // keyboard shortcuts
         switch(current){
@@ -30,11 +30,14 @@ int main(){
         switch(current){
             case MAIN: {
                 ClearBackground(BLUE);
+                DrawRectangleRec(Start, DARKGRAY);
+                DrawText("Start", width / 2 - 40, height / 2 + 10, 30, BLACK);
+                DrawText("Welcome To SkyInstaller!", width / 2 - (MeasureText(welc, 40) / 2), height / 4, 40, BLACK);
             }
         }
         EndDrawing();
     }
-    end();
+    
     CloseWindow();
     return 0;
 }
